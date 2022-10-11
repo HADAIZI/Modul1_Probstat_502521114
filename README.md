@@ -95,6 +95,66 @@ Gunakan ``hist`` untuk membuat histogram dengan parameter dari distribusi binomi
 ![Screenshot 2022-10-11 20 12 30](https://user-images.githubusercontent.com/90259304/195165141-7604979b-68a1-47cd-820e-73b04f8e82fd.png)
 
 - Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Binomial.
+Rataan didapat menggunakan formula banyak data dikali dengan peluang kejadian.
+```r
+mean = n * p
+mean
+```
+Varian didapat menggunakan formula nilai rataan dan dikali dengan komplemen dari peluang kejadian.
+```r
+variance = n * p * (1 - p)
+variance
+```
+didapat:
+![Screenshot 2022-10-11 20 19 30](https://user-images.githubusercontent.com/90259304/195165742-3a268231-98e9-4a1f-98b9-d82404a0d00c.png)
+
+## Soal 3
+```
+Diketahui data dari  sebuah tempat bersalin di rumah sakit tertentu menunjukkan rata-rata historis 4,5 bayi lahir di rumah sakit ini setiap hari. (gunakan Distribusi Poisson)
+```
+- Berapa peluang bahwa 6 bayi akan lahir di rumah sakit ini besok?
+Menggunakan distribusi Poisson dengan bantuan fungsi `dpois()` yang berisi `x` (jumlah data) dan `lambda` (rata-rata historis) sebagai parameter
+
+```r
+lambda = 4.5
+
+# A
+x = 6
+P = dpois(x, lambda)
+P
+```
+Didapat:
+![Screenshot 2022-10-11 20 55 46](https://user-images.githubusercontent.com/90259304/195166859-7e874fb5-7cb5-4d8a-b843-79ab69a572a7.png)
+
+- simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini  selama setahun (n = 365)
+Gunakan fungsi `hist()` dengan angka acak dari fungsi distribusi Poisson sebagai parameternya.
+```r
+x = 6
+n = 365
+hist(rpois(n, lambda), main = "Histogram")
+```
+didapat:
+![Screenshot 2022-10-11 20 55 55](https://user-images.githubusercontent.com/90259304/195167251-e05a8141-c76c-4bc2-ab7e-c4724bbb4081.png)
+
+- Bandingkan hasil poin a dan b, apa kesimpulan yang bisa didapatkan?
+Poin A dan B cenderung sama, karena nilai dari poin A sendiri didapat dari range nilai poin B. Range dari B dapat dilihat pada plot yang telah terbentuk. Dari sana, nilai dari A berada di dalam range B.
+
+Oleh karena itu, dalam estimasi selama 365 hari akan memberikan nilai hasil yang hampir sama dengan estimasi jumlah bayi yang akan dilahirkan di waktu selanjutnya (esok hari).
+
+-Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson.
+Besarnya nilai rataan sama dengan varian (distribusi possium)
+
+```r
+mean = variance = lambda
+mean
+variance
+```
+didapat :
+![Screenshot 2022-10-11 20 56 36](https://user-images.githubusercontent.com/90259304/195168205-0311feba-1b23-4a77-99c2-94d13bd484e9.png)
+
+## Soal 4
+
+
 
 
 
