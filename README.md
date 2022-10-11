@@ -16,4 +16,6 @@ x = 3
 P <- dgeom(x, p)
 P
 ```
+![Screenshot 2022-10-11 22 01 32](https://user-images.githubusercontent.com/90259304/195156199-6612ea9c-95ae-4638-a601-dfd6573ca355.png)
+
 
